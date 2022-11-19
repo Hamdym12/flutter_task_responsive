@@ -20,7 +20,7 @@ class BuildGridWidget extends StatelessWidget {
     return SizedBox(
       height: isPortrait
           ? (mQ.height - appBar - statusBarHeight ) * 0.625
-          : (mQ.height - appBar - statusBarHeight) * 0.4,
+          : (mQ.height - appBar - statusBarHeight) * 0.5,
       child: StaggeredGridView.countBuilder(
         padding: EdgeInsets.only(top: isPortrait ? 5 : 10),
         shrinkWrap: true,

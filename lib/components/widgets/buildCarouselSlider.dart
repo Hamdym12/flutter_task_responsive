@@ -17,7 +17,7 @@ class BuildCarouselSlider extends StatelessWidget {
     return SizedBox(
         height: !isLandScape
             ? (mQ.height - appBar - statusBarHeight)  * 0.325
-            : (mQ.height - appBar - statusBarHeight) * 0.55,
+            : (mQ.height - appBar - statusBarHeight) * 0.45,
         child: CarouselSlider(
           items: controller.imgList
               .map((value) => Image(
