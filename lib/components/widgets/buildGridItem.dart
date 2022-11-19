@@ -5,25 +5,24 @@ import 'package:flutter_task_responsive/pages/home/cubit/cubit.dart';
 import 'package:staggered_grid_view_flutter/widgets/staggered_grid_view.dart';
 import 'package:staggered_grid_view_flutter/widgets/staggered_tile.dart';
 
-class BuildGridViewItem extends StatelessWidget {
-   BuildGridViewItem({Key? key}) : super(key: key);
+class BuildGridWidget extends StatelessWidget {
+   BuildGridWidget({Key? key}) : super(key: key);
 
   int? currentIndex;
-
+  final appBar = AppBar().preferredSize.height;
   @override
   Widget build(BuildContext context) {
     final mQ = MediaQuery.of(context).size;
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
-    final appBar = AppBar().preferredSize.height;
     final double statusBarHeight = MediaQuery.of(context).padding.top;
     final controller = BlocProvider.of<HomeCubit>(context);
     bool isOdd = controller.infoList.length % 2 != 0;
     return SizedBox(
       height: isPortrait
-          ? (mQ.height - appBar - statusBarHeight - 25) * 0.625
+          ? (mQ.height - appBar - statusBarHeight ) * 0.625
           : (mQ.height - appBar - statusBarHeight) * 0.4,
       child: StaggeredGridView.countBuilder(
-        padding: EdgeInsets.only(top: isPortrait ? 0 : 10),
+        padding: EdgeInsets.only(top: isPortrait ? 5 : 10),
         shrinkWrap: true,
         physics: const ScrollPhysics(),
         crossAxisCount: isPortrait ? 2 : 4,
@@ -36,9 +35,9 @@ class BuildGridViewItem extends StatelessWidget {
         staggeredTileBuilder: (index) {
           bool isLast = index == controller.infoList.last;
           return StaggeredTile.count(
-            (isLast && isPortrait && isOdd) ? 2 : (controller.infoList.length -
-                1 == index) ? 2 : 1,
-            0.7,
+            (isLast && isPortrait && isOdd) ? 2 :
+            (controller.infoList.length - 1 == index) ? 2 : 1,
+            0.72,
           );
         },
       ),

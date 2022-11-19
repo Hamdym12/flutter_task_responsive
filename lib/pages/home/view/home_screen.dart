@@ -1,13 +1,12 @@
 part of'home_screen_imports.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
 
-  HomeScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final mQ = MediaQuery.of(context).size;
     final appBar = AppBar().preferredSize.height;
-    final controller = BlocProvider.of<HomeCubit>(context);
     final double statusBarHeight = MediaQuery.of(context).padding.top;
     return BlocProvider<HomeCubit>(
       create: (BuildContext context)=>HomeCubit(),
@@ -19,10 +18,9 @@ class HomeScreen extends StatelessWidget {
             child: Column(
               children: [
                  SizedBox(height: (mQ.height -appBar -statusBarHeight) *0.025,),
-                BuildCarouselSlider(),
+                const BuildCarouselSlider(),
                 SizedBox(height: (mQ.height -appBar -statusBarHeight) *0.025,),
-                 BuildGridViewItem(),
-
+                 BuildGridWidget(),
               ],
             ),
           ),

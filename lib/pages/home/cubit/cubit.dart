@@ -11,7 +11,7 @@ class HomeCubit extends Cubit<HomeStates>{
       ItemsModel(image: 'assets/images/note.png',title: 'طلب مقابلة'),
       ItemsModel(image: 'assets/images/curriculum.png',title: 'طلب توظيف'),
       ItemsModel(image: 'assets/images/profiles.png',title: 'نماذج'),
-      ItemsModel(image: 'assets/images/internet.png',title: 'روابط عامه'),
+      ItemsModel(image: 'assets/images/internet.png',title: 'روابط عامة'),
       ItemsModel(image: 'assets/images/schedule.png',title: 'رزنامة العام'),
       ItemsModel(image: 'assets/images/customer-service.png',title: 'تواصل معنا'),
     ];

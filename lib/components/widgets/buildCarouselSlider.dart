@@ -1,13 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-
 import '../../pages/home/cubit/cubit.dart';
 
 class BuildCarouselSlider extends StatelessWidget {
-  BuildCarouselSlider({Key? key}) : super(key: key);
-
+  const BuildCarouselSlider({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +24,7 @@ class BuildCarouselSlider extends StatelessWidget {
                     image: AssetImage(value.image),
                     width: double.infinity,
                     fit: !isLandScape ? BoxFit.fitHeight : BoxFit.contain,
-                  ))
-              .toList(),
+                  )).toList(),
           options: CarouselOptions(
               reverse: false,
               initialPage: 0,

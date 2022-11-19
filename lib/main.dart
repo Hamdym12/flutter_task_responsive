@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       ),
      home:  BlocProvider<HomeCubit>(
        create: (BuildContext context) => HomeCubit(),
-         child:HomeScreen()
+         child:const HomeScreen()
      ),
     );
   }
